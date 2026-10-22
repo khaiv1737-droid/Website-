@@ -1,0 +1,282 @@
+
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8fafc">
+  <title>Wed — Nhật's Space</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
+          boxShadow: { glow: '0 20px 80px rgba(99,102,241,.16)' }
+        }
+      }
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { transition: background-color .25s, color .25s; }
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .65s ease, transform .65s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .glass { backdrop-filter: blur(16px); }
+    .script-code { white-space: pre-wrap; overflow-wrap: anywhere; }
+    #mobileMenu { transition: transform .25s ease, opacity .25s ease; }
+    #mobileMenu.hidden-menu { transform: translateX(105%); opacity: 0; pointer-events: none; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 selection:bg-indigo-300/50">
+  <div class="fixed inset-x-0 top-0 z-50 h-1 bg-slate-200 dark:bg-slate-800">
+    <div id="progress" class="h-full w-0 bg-gradient-to-r from-indigo-500 to-cyan-400"></div>
+  </div>
+
+  <header class="sticky top-1 z-40 border-b border-slate-200/80 bg-white/80 dark:border-white/10 dark:bg-slate-950/80 glass">
+    <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 lg:px-8">
+      <a href="#home" class="flex items-center gap-3 font-bold tracking-tight">
+        <span class="grid h-10 w-10 place-items-center rounded-2xl bg-slate-900 text-white dark:bg-white dark:text-slate-900">N.</span>
+        <span>NHẬT<span class="text-indigo-500">/SPACE</span></span>
+      </a>
+      <div class="hidden items-center gap-7 text-sm font-medium md:flex">
+        <a class="navlink hover:text-indigo-500" href="#social">Mạng xã hội</a>
+        <a class="navlink hover:text-indigo-500" href="#scripts">Roblox Scripts</a>
+        <a class="navlink hover:text-indigo-500" href="#about">Giới thiệu</a>
+      </div>
+      <div class="flex items-center gap-2">
+        <button id="themeToggle" class="rounded-xl border border-slate-200 p-2.5 hover:bg-slate-100 dark:border-white/10 dark:hover:bg-white/10" aria-label="Đổi giao diện" title="Đổi giao diện">
+          <svg id="themeIcon" viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3l1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3l1.42-1.42"/></svg>
+        </button>
+        <button id="menuToggle" class="rounded-xl border border-slate-200 p-2.5 md:hidden dark:border-white/10" aria-label="Mở menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <div id="mobileMenu" class="hidden-menu glass fixed right-3 top-20 z-50 w-64 rounded-3xl border border-slate-200 bg-white/95 p-3 shadow-2xl dark:border-white/10 dark:bg-slate-900/95 md:hidden">
+    <a href="#social" class="mobile-link block rounded-2xl px-4 py-3 hover:bg-slate-100 dark:hover:bg-white/10">Mạng xã hội</a>
+    <a href="#scripts" class="mobile-link block rounded-2xl px-4 py-3 hover:bg-slate-100 dark:hover:bg-white/10">Roblox Scripts</a>
+    <a href="#about" class="mobile-link block rounded-2xl px-4 py-3 hover:bg-slate-100 dark:hover:bg-white/10">Giới thiệu</a>
+  </div>
+
+  <main id="home">
+    <section class="relative overflow-hidden">
+      <div class="pointer-events-none absolute -left-24 top-20 h-72 w-72 rounded-full bg-indigo-400/20 blur-3xl"></div>
+      <div class="pointer-events-none absolute -right-24 top-44 h-72 w-72 rounded-full bg-cyan-400/20 blur-3xl"></div>
+      <div class="relative mx-auto grid max-w-6xl items-center gap-12 px-5 py-20 md:py-28 lg:grid-cols-[1.2fr_.8fr] lg:px-8">
+        <div class="reveal">
+          <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-3 py-1.5 text-xs font-semibold text-slate-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-300">
+            <span class="h-2 w-2 rounded-full bg-emerald-500"></span> PERSONAL SPACE · 2026
+          </div>
+          <h1 class="max-w-2xl text-5xl font-black leading-[1.06] tracking-tight sm:text-6xl lg:text-7xl">Xin chào,<br>mình là <span class="bg-gradient-to-r from-indigo-500 to-cyan-500 bg-clip-text text-transparent">Nhật.</span></h1>
+          <p class="mt-6 max-w-xl text-lg leading-8 text-slate-600 dark:text-slate-400">Một góc nhỏ để kết nối mạng xã hội và lưu trữ những script Roblox yêu thích.</p>
+          <div class="mt-9 flex flex-wrap gap-3">
+            <a href="#social" class="rounded-2xl bg-slate-900 px-5 py-3.5 text-sm font-bold text-white shadow-glow transition hover:-translate-y-0.5 dark:bg-white dark:text-slate-900">Khám phá trang <span aria-hidden="true">↘</span></a>
+            <a href="#scripts" class="rounded-2xl border border-slate-300 px-5 py-3.5 text-sm font-bold transition hover:bg-white dark:border-white/15 dark:hover:bg-white/5">Xem thư viện script</a>
+          </div>
+        </div>
+        <div class="reveal mx-auto w-full max-w-sm">
+          <div class="rounded-[2rem] border border-white/70 bg-white/70 p-5 shadow-2xl shadow-indigo-500/10 dark:border-white/10 dark:bg-white/5">
+            <div class="rounded-[1.5rem] bg-gradient-to-br from-indigo-500 via-violet-500 to-cyan-400 p-1">
+              <div class="rounded-[1.3rem] bg-slate-950 p-7 text-white">
+                <div class="flex items-center justify-between"><span class="text-xs font-bold tracking-[.2em] text-white/60">PROFILE CARD</span><span>✦</span></div>
+                <div class="my-9 grid h-20 w-20 place-items-center rounded-3xl bg-white/10 text-3xl font-black ring-1 ring-white/20">LN</div>
+                <h2 class="text-2xl font-bold">Nguyễn Lâm Nhật</h2>
+                <p class="mt-2 text-sm text-white/60">Social · Gaming · Technology</p>
+                <div class="mt-8 flex gap-2"><span class="rounded-full bg-white/10 px-3 py-1 text-xs">TikTok</span><span class="rounded-full bg-white/10 px-3 py-1 text-xs">Roblox</span><span class="rounded-full bg-white/10 px-3 py-1 text-xs">AI</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="social" class="mx-auto max-w-6xl scroll-mt-28 px-5 py-16 lg:px-8">
+      <div class="reveal mb-8 flex flex-wrap items-end justify-between gap-4">
+        <div><p class="text-sm font-bold uppercase tracking-[.2em] text-indigo-500">01 / Kết nối</p><h2 class="mt-2 text-3xl font-extrabold tracking-tight sm:text-4xl">Mạng xã hội</h2></div>
+        <p class="max-w-md text-sm leading-6 text-slate-500 dark:text-slate-400">Chọn một thẻ để mở trang cá nhân tương ứng.</p>
+      </div>
+      <div class="grid gap-4 md:grid-cols-2">
+        <a href="https://www.facebook.com/share/1CAkdzQL8a/" target="_blank" rel="noopener noreferrer" class="reveal group rounded-3xl border border-slate-200 bg-white p-6 transition hover:-translate-y-1 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-500/5 dark:border-white/10 dark:bg-white/[.04] dark:hover:border-blue-400/40">
+          <div class="flex items-start justify-between"><span class="grid h-12 w-12 place-items-center rounded-2xl bg-blue-500 text-2xl font-black text-white">f</span><span class="text-slate-400 transition group-hover:-translate-y-1 group-hover:translate-x-1">↗</span></div>
+          <h3 class="mt-5 text-xl font-bold">Facebook</h3><p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Mở liên kết Facebook đã cung cấp.</p>
+          <span class="mt-5 inline-block text-sm font-bold text-blue-600 dark:text-blue-400">Mở Facebook →</span>
+        </a>
+        <a href="https://www.tiktok.com/@lamnhat2009" target="_blank" rel="noopener noreferrer" class="reveal group rounded-3xl border border-slate-200 bg-white p-6 transition hover:-translate-y-1 hover:border-pink-300 hover:shadow-xl hover:shadow-pink-500/5 dark:border-white/10 dark:bg-white/[.04] dark:hover:border-pink-400/40">
+          <div class="flex items-start justify-between"><span class="grid h-12 w-12 place-items-center rounded-2xl bg-slate-950 text-2xl text-white dark:bg-white dark:text-slate-950">♪</span><span class="text-slate-400 transition group-hover:-translate-y-1 group-hover:translate-x-1">↗</span></div>
+          <h3 class="mt-5 text-xl font-bold">TikTok</h3><p class="mt-2 text-sm text-slate-500 dark:text-slate-400">@lamnhat2009</p>
+          <span class="mt-5 inline-block text-sm font-bold text-pink-600 dark:text-pink-400">Mở TikTok →</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="scripts" class="scroll-mt-28 border-y border-slate-200 bg-white/60 py-16 dark:border-white/10 dark:bg-white/[.02]">
+      <div class="mx-auto max-w-6xl px-5 lg:px-8">
+        <div class="reveal mb-8"><p class="text-sm font-bold uppercase tracking-[.2em] text-indigo-500">02 / Thư viện</p><h2 class="mt-2 text-3xl font-extrabold tracking-tight sm:text-4xl">Roblox Scripts</h2><p class="mt-3 max-w-2xl text-sm leading-6 text-slate-500 dark:text-slate-400">Chọn script để xem mã và sao chép. Chỉ chạy mã bạn hiểu và tin tưởng; script bên ngoài có thể gây rủi ro cho tài khoản hoặc thiết bị.</p></div>
+        <div class="grid gap-4 lg:grid-cols-2">
+          <article class="reveal rounded-3xl border border-slate-200 bg-white p-5 dark:border-white/10 dark:bg-slate-950/70">
+            <div class="flex items-center justify-between gap-3"><div><span class="text-xs font-bold text-indigo-500">SCRIPT 01</span><h3 class="mt-1 text-xl font-bold">Hit box</h3></div><span class="rounded-xl bg-indigo-50 px-3 py-2 text-xs font-bold text-indigo-700 dark:bg-indigo-400/10 dark:text-indigo-300">Lua</span></div>
+            <pre class="script-code mt-5 max-h-48 overflow-auto rounded-2xl bg-slate-950 p-4 text-xs leading-6 text-cyan-100"><code id="hitboxCode">loadstring(game:HttpGet("https://gist.githubusercontent.com/robotgamev7-lang/3199540af28ac0445b9d4c00a09cb046/raw/bd0c6b6453dab7982fb4f7b240ae3e2449bd2ad2/hitbox_vie.lua"))()</code></pre>
+            <button data-copy="hitboxCode" class="copy-btn mt-4 rounded-xl bg-slate-900 px-4 py-2.5 text-sm font-bold text-white transition hover:bg-indigo-600 dark:bg-white dark:text-slate-900">Sao chép mã</button>
+          </article>
+
+          <article class="reveal rounded-3xl border border-slate-200 bg-white p-5 dark:border-white/10 dark:bg-slate-950/70">
+            <div class="flex items-center justify-between gap-3"><div><span class="text-xs font-bold text-indigo-500">SCRIPT 02</span><h3 class="mt-1 text-xl font-bold">Aimbot</h3></div><span class="rounded-xl bg-indigo-50 px-3 py-2 text-xs font-bold text-indigo-700 dark:bg-indigo-400/10 dark:text-indigo-300">Lua</span></div>
+            <pre class="script-code mt-5 max-h-48 overflow-auto rounded-2xl bg-slate-950 p-4 text-xs leading-6 text-cyan-100"><code id="aimbotCode">loadstring(game:HttpGet("https://gist.githubusercontent.com/robotgamev7-lang/89e97e0bf465f11ade561a39c66b6510/raw/8e02ecf358d955bdcfbb44f8e9a8a15fcaeb3cfe/vietbakhi.lua"))()</code></pre>
+            <button data-copy="aimbotCode" class="copy-btn mt-4 rounded-xl bg-slate-900 px-4 py-2.5 text-sm font-bold text-white transition hover:bg-indigo-600 dark:bg-white dark:text-slate-900">Sao chép mã</button>
+          </article>
+
+          <!-- SCRIPT MỚI ĐƯỢC THÊM -->
+          <article class="reveal rounded-3xl border border-slate-200 bg-white p-5 dark:border-white/10 dark:bg-slate-950/70">
+            <div class="flex items-center justify-between gap-3">
+              <div>
+                <span class="text-xs font-bold text-indigo-500">SCRIPT 03</span>
+                <h3 class="mt-1 text-xl font-bold">Fly + Tle</h3>
+              </div>
+              <span class="rounded-xl bg-indigo-50 px-3 py-2 text-xs font-bold text-indigo-700 dark:bg-indigo-400/10 dark:text-indigo-300">Lua</span>
+            </div>
+            <pre class="script-code mt-5 max-h-48 overflow-auto rounded-2xl bg-slate-950 p-4 text-xs leading-6 text-cyan-100"><code id="flyTleCode">loadstring(game:HttpGet("https://gist.githubusercontent.com/robotgamev7-lang/ad4a7096d2808d6ec95e3cea5dee2f81/raw/afeff789c66bd1d93ef41b4cda0c98e39e51db30/vie_cheat.lua"))()</code></pre>
+            <p class="mt-3 text-xs leading-5 text-amber-600 dark:text-amber-300">Lưu ý: đây là mã tải script từ bên ngoài. Trang web chỉ hiển thị/sao chép mã, không thực thi nó. Chỉ sử dụng nếu bạn tin tưởng nguồn và hiểu rủi ro.</p>
+            <button data-copy="flyTleCode" class="copy-btn mt-4 rounded-xl bg-slate-900 px-4 py-2.5 text-sm font-bold text-white transition hover:bg-indigo-600 dark:bg-white dark:text-slate-900">Sao chép mã</button>
+          </article>
+        </div>
+        <p id="copyStatus" role="status" class="mt-4 text-sm text-emerald-600 dark:text-emerald-400"></p>
+      </div>
+    </section>
+
+    <section id="about" class="mx-auto max-w-6xl scroll-mt-28 px-5 py-16 lg:px-8">
+      <div class="reveal rounded-[2rem] border border-slate-200 bg-gradient-to-br from-white to-indigo-50 p-7 sm:p-10 dark:border-white/10 dark:from-white/[.05] dark:to-indigo-500/[.08]">
+        <p class="text-sm font-bold uppercase tracking-[.2em] text-indigo-500">03 / Về mình</p>
+        <div class="mt-3 grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
+          <div><h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">Nguyễn Lâm Nhật</h2><p class="mt-4 max-w-2xl leading-7 text-slate-600 dark:text-slate-400">Chào mừng bạn đến với trang cá nhân của mình. Tại đây có các liên kết mạng xã hội và thư viện script được sắp xếp gọn gàng, dễ truy cập.</p></div>
+          <a href="#home" class="inline-flex w-fit items-center gap-2 rounded-xl border border-slate-300 px-4 py-3 text-sm font-bold hover:bg-white dark:border-white/15 dark:hover:bg-white/5">Lên đầu trang ↑</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-200 px-5 py-8 text-center text-xs text-slate-500 dark:border-white/10 dark:text-slate-500">© <span id="year"></span> NHẬT/SPACE · Made for the web</footer>
+
+  <script>
+    // Chế độ sáng/tối.
+    const root = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+    const savedTheme = localStorage.getItem('wed-theme');
+
+    if (
+      savedTheme === 'dark' ||
+      (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      root.classList.add('dark');
+    }
+
+    themeToggle.addEventListener('click', () => {
+      root.classList.toggle('dark');
+      localStorage.setItem(
+        'wed-theme',
+        root.classList.contains('dark') ? 'dark' : 'light'
+      );
+    });
+
+    // Menu trên điện thoại.
+    const menu = document.getElementById('mobileMenu');
+    const menuToggle = document.getElementById('menuToggle');
+
+    function closeMenu() {
+      menu.classList.add('hidden-menu');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }
+
+    menuToggle.addEventListener('click', () => {
+      const isClosed = menu.classList.toggle('hidden-menu');
+      menuToggle.setAttribute('aria-expanded', String(!isClosed));
+    });
+
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('click', event => {
+      if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
+        closeMenu();
+      }
+    });
+
+    // Hiệu ứng hiện dần khi cuộn.
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => {
+      revealObserver.observe(el);
+    });
+
+    // Thanh tiến trình cuộn trang.
+    function updateProgress() {
+      const scrollable =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const percent = scrollable > 0
+        ? (window.scrollY / scrollable) * 100
+        : 0;
+
+      document.getElementById('progress').style.width = percent + '%';
+    }
+
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+
+    // Sao chép mã của từng script.
+    document.querySelectorAll('.copy-btn').forEach(button => {
+      button.addEventListener('click', async () => {
+        const code = document.getElementById(button.dataset.copy).textContent;
+        const status = document.getElementById('copyStatus');
+
+        try {
+          await navigator.clipboard.writeText(code);
+
+          const labels = {
+            hitboxCode: 'Hit box',
+            aimbotCode: 'Aimbot',
+            flyTleCode: 'Fly + Tle'
+          };
+
+          status.textContent =
+            'Đã sao chép mã ' +
+            (labels[button.dataset.copy] || 'script') + '.';
+        } catch {
+          const range = document.createRange();
+          range.selectNodeContents(
+            document.getElementById(button.dataset.copy)
+          );
+
+          const selection = window.getSelection();
+          selection.removeAllRanges();
+          selection.addRange(range);
+
+          status.textContent =
+            'Không thể tự sao chép trong trình duyệt này. ' +
+            'Mã đã được chọn — hãy sao chép thủ công.';
+        }
+      });
+    });
+
+    // Cập nhật năm tự động.
+    document.getElementById('year').textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+  </html>
+  
